@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "feature_version": "mt-nit-stepaware-cp-1",
+  "process_columns": {
+    "timestamp": "Timestamp",
+    "main_recipe": "PMStoredProcessRecipeName",
+    "main_step_seq": "ProcessRecipeStepSeqNo",
+    "main_step_id": "ProcessRecipeStepID",
+    "execution_recipe": "PPExecname",
+    "substep_seq": "PPExecStepSeqNo",
+    "substep_id": "PPExecStepID",
+    "loop_setting": "SubRecipeLoopSettingValue",
+    "loop_index": "SubRecipeLoopMoniterValue"
+  },
+  "audit_columns": {
+    "main_step_name": "ProcessRecipeStepName",
+    "execution_step_name": "PPExecStepName",
+    "run_id": "_run_id",
+    "row_observed": "_row_observed",
+    "state_valid": "_context_valid"
+  },
+  "absolute_set_columns": ["Temp_Set_U", "Temp_Set_CU", "Temp_Set_C", "Temp_Set_CL", "Temp_Set_L"],
+  "context": 128,
+  "horizon": 30,
+  "patch_size": 32,
+  "state_embedding_dim": 64,
+  "recipe_dropout_probability": 0.1,
+  "maximum_observation_gap_seconds": 1.5,
+  "inject_context": true,
+  "inject_future": false,
+  "static_recipe_future": true,
+  "sensor_embedding": true,
+  "zero_init_injection": true,
+  "duration_mode": "remaining_log_normal",
+  "duration_sigma_min": 0.1,
+  "normalization_selection": "../normalization_comparison/selections/20261109T235257Z-c0e2c5cdca1f/normalization_policy.json",
+  "baseline_directory": "../normalization_comparison/outputs/train/B-A1-005-20261110T000025Z-bba0f9d4d763"
+}

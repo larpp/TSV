@@ -1,0 +1,28 @@
+{
+  "repo_id": "mistralai/Timestral-28M",
+  "revision": "49b26409ac87b5935539a5d8ffe7f397b720db47",
+  "local_directory": "pretrained",
+  "license": "Modified MIT; see pretrained/LICENSE",
+  "files": {
+    "LICENSE": {
+      "sha256": "648194727930df730890e9f9affdbcc5c930d406d6829559b25ca3d5a973fc8c",
+      "bytes": 1695,
+      "lfs_sha256": null
+    },
+    "README.md": {
+      "sha256": "4e4fbb532f45c07c8537a8fe25cb666084435f70caf13ea45f20f9161d7894d7",
+      "bytes": 4552,
+      "lfs_sha256": null
+    },
+    "config.json": {
+      "sha256": "0cdf44b8ea981191de53078e0a5ecbbd437046bd939a546d5dbe17868f71281f",
+      "bytes": 961,
+      "lfs_sha256": null
+    },
+    "model.safetensors": {
+      "sha256": "dfc83c6220937ce5fc6687b35a4df94cd25e28a2cfe6fb92a23dad6301b2015d",
+      "bytes": 111296464,
+      "lfs_sha256": "dfc83c6220937ce5fc6687b35a4df94cd25e28a2cfe6fb92a23dad6301b2015d"
+    }
+  }
+}

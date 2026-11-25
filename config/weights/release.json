@@ -1,0 +1,8 @@
+{
+  "download_url": null,
+  "checkpoint_sha256": "ef03e6dad4422cf6205c609e35b7f81508730fb996c3c95891e8a0be6cc640bd",
+  "original_code_sha256": "7b5243b25273c24ad0a13371e95c2e854a60168f850bf78d8750eb51a62a2317",
+  "standalone_code_sha256": "797e20a3e19f6430517e8275925073000bec41fb6af327f321f08f3bf9fe65f9",
+  "training_run": "steploop-20261123T142415Z-3aa9cd62b9b7",
+  "epoch": 51
+}

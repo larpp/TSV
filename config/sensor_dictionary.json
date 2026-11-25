@@ -1,0 +1,1496 @@
+[
+  {
+    "name": "Timestamp",
+    "description": "저장 시각. Excel은 전체 날짜·시각으로 설명하지만 대표 파일은 분·초만 남음.",
+    "unit": "대표 파일 mm:ss.s",
+    "group": "시간·작업 상태",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "11110종",
+    "sample_observation": "날짜·시·밀리초 포함"
+  },
+  {
+    "name": "ObservableTimestamp",
+    "description": "Excel상 센서 측정 시각 성격의 필드. 대표 파일은 과학적 표기 상수로 원래 세부 시각을 복원할 수 없음.",
+    "unit": "시각 표현 미확인",
+    "group": "시간·작업 상태",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "상수 `2.03E+15`",
+    "sample_observation": "2025043009204940 ~ 2025113023554820"
+  },
+  {
+    "name": "EquipmentStatus",
+    "description": "장비 상태 코드. Excel은 Idle=1, 시작 전=2, 시작 후=3으로 설명하지만 샘플의 STANDBY에서도 3이므로 상태 판정에는 Recipe/Step 문맥을 함께 봄.",
+    "unit": "상태 코드",
+    "group": "시간·작업 상태",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "상수 `3`",
+    "sample_observation": "1 ~ 3"
+  },
+  {
+    "name": "AlarmState",
+    "description": "알람 상태 필드. Excel도 true 고정으로 기록; TRUE만으로 고장 발생이나 정상 여부를 판정하지 않음.",
+    "unit": "불리언 표기",
+    "group": "시간·작업 상태",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "상수 `TRUE`",
+    "sample_observation": "8파일 고정 True"
+  },
+  {
+    "name": "O2Density_Monitor_Value",
+    "description": "Loading Area 산소 농도 모니터. Excel의 201333 ≈ 20.13% 예시와 함께 읽음.",
+    "unit": "Excel: % ~ ppm",
+    "group": "시간·작업 상태",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "200750 ~ 201416.7",
+    "sample_observation": "200583.3 ~ 201375.0"
+  },
+  {
+    "name": "O2Density_Set_Value",
+    "description": "Loading Area 산소 농도 설정값.",
+    "unit": "Excel: % ~ ppm",
+    "group": "시간·작업 상태",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "상수 `185000`",
+    "sample_observation": "185000.0"
+  },
+  {
+    "name": "PMstatus",
+    "description": "공정 상태 코드. Excel은 6/7/8/9를 설명하지만 샘플에는 5/11/13도 있음. 추가 코드의 의미는 미확인.",
+    "unit": "상태 코드",
+    "group": "시간·작업 상태",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "상수 `9`",
+    "sample_observation": "5 ~ 13"
+  },
+  {
+    "name": "PPExecname",
+    "description": "현재 실행 중인 메인 또는 서브 Recipe 이름.",
+    "unit": "문자열",
+    "group": "시간·작업 상태",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "2종",
+    "sample_observation": "빈 값 외 5종; 빈 값 13,900개"
+  },
+  {
+    "name": "PPExecStepSeqNo",
+    "description": "현재 실행 Recipe의 Step 순번. 서브 구간에서 다시 쓰이고 STANDBY에는 0, 빈 Step 구간에는 255도 관측. 255의 규격 의미는 미확인.",
+    "unit": "순번",
+    "group": "시간·작업 상태",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "0 ~ 42",
+    "sample_observation": "0 ~ 255"
+  },
+  {
+    "name": "PPExecStepID",
+    "description": "현재 실행 중인 메인/서브 Step의 장비 ID. PDF의 설명용 Step Number와 다름.",
+    "unit": "ID",
+    "group": "시간·작업 상태",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "1 ~ 152",
+    "sample_observation": "0 ~ 998"
+  },
+  {
+    "name": "PPExecStepName",
+    "description": "현재 실행 중인 메인/서브 Step 이름.",
+    "unit": "문자열",
+    "group": "시간·작업 상태",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "46종",
+    "sample_observation": "빈 값 외 39종; 빈 값 13,900개"
+  },
+  {
+    "name": "SubRecipeLoopSettingValue",
+    "description": "서브 Recipe 루프 설정 횟수.",
+    "unit": "횟수",
+    "group": "시간·작업 상태",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "0 ~ 95",
+    "sample_observation": "0 ~ 405"
+  },
+  {
+    "name": "SubRecipeLoopMoniterValue",
+    "description": "서브 Recipe 루프 모니터 값. 원본 철자는 Moniter이며 빈 값 1개 존재.",
+    "unit": "횟수",
+    "group": "시간·작업 상태",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "0 ~ 95; 빈 값 1개",
+    "sample_observation": "0 ~ 405"
+  },
+  {
+    "name": "ActiveCjobID",
+    "description": "Control Job 식별자. 시계열 센서값이 아닌 작업 메타데이터.",
+    "unit": "문자열 ID",
+    "group": "시간·작업 상태",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "상수 `KE-CJ0000000003`",
+    "sample_observation": "Job별 ID 차이; 빈 값 있음; 빈 값 13,901개"
+  },
+  {
+    "name": "ActivePjobID",
+    "description": "Process Job 식별자. 시계열 센서값이 아닌 작업 메타데이터.",
+    "unit": "문자열 ID",
+    "group": "시간·작업 상태",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "상수 `KE-PJ0000000003`",
+    "sample_observation": "Job별 ID 차이; 빈 값 있음; 빈 값 13,901개"
+  },
+  {
+    "name": "PMStoredProcessRecipeName",
+    "description": "저장된 메인 Recipe 이름.",
+    "unit": "문자열",
+    "group": "시간·작업 상태",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "상수 `MainRecipe/RUN/0_P_IH_HD02`",
+    "sample_observation": "빈 값 외 3종"
+  },
+  {
+    "name": "ProcessRecipeEndRemainTime",
+    "description": "Recipe 잔여 시간 필드. 대표 파일은 0시간 고정이나 5월 21일 10시 샘플에 1초 값 한 행도 있음. 미사용 여부는 미확인.",
+    "unit": "시간 문자열",
+    "group": "시간·작업 상태",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "상수 `0000:00:00`",
+    "sample_observation": "빈 값 외 2종"
+  },
+  {
+    "name": "ProcessRecipeStepTime",
+    "description": "Step 시간 설정/보고 필드. Excel은 실제 시간과 맞지 않는다고 기록.",
+    "unit": "시간 문자열",
+    "group": "시간·작업 상태",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "16종",
+    "sample_observation": "빈 값 외 14종"
+  },
+  {
+    "name": "ProcessRecipeStepRemainTime",
+    "description": "Step 잔여 시간 보고 필드. Excel은 실제 시간과 맞지 않는다고 기록.",
+    "unit": "시간 문자열",
+    "group": "시간·작업 상태",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "1201종",
+    "sample_observation": "빈 값 외 1종"
+  },
+  {
+    "name": "ProcessRecipeStepID",
+    "description": "메인 Recipe Step의 장비 ID.",
+    "unit": "ID",
+    "group": "시간·작업 상태",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "1 ~ 152",
+    "sample_observation": "0 ~ 998"
+  },
+  {
+    "name": "ProcessRecipeStepName",
+    "description": "메인 Recipe Step 이름. 서브 Step 실행 중에도 상위 메인 구간을 식별하는 데 사용.",
+    "unit": "문자열",
+    "group": "시간·작업 상태",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "39종",
+    "sample_observation": "빈 값 외 32종; 빈 값 13,901개"
+  },
+  {
+    "name": "ProcessRecipeStepSeqNo",
+    "description": "메인 Recipe 진행 순번. 대표 파일은 1~42이나 샘플에는 STANDBY의 0 및 빈 Step 구간의 255도 있음.",
+    "unit": "순번",
+    "group": "시간·작업 상태",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "1 ~ 42",
+    "sample_observation": "0 ~ 255"
+  },
+  {
+    "name": "ProcessRecipeTotalTime",
+    "description": "Recipe 총 시간 보고값. Excel은 실제 공정 시간과 다르다고 기록.",
+    "unit": "시간 문자열",
+    "group": "시간·작업 상태",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "상수 `0002:48:16`",
+    "sample_observation": "빈 값 외 5종"
+  },
+  {
+    "name": "PJobProcessingState",
+    "description": "Process Job 진행 상태. Excel은 0/1을 설명하지만 샘플의 STANDBY에 2도 있음. 2의 의미는 미확인.",
+    "unit": "상태 코드",
+    "group": "시간·작업 상태",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "상수 `1`",
+    "sample_observation": "0 ~ 2"
+  },
+  {
+    "name": "Temp_Set_U",
+    "description": "설정 온도 계열. U는 Excel 설명, 나머지 구역은 동일 계열 해석.",
+    "unit": "℃ (계열 해석)",
+    "group": "온도·히터",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "238.1 ~ 468.1",
+    "sample_observation": "238.1 ~ 508.1"
+  },
+  {
+    "name": "Temp_HT_Power_U",
+    "description": "히터 출력 계열로 추정. Excel 설명·단위 셀은 비어 있음.",
+    "unit": "미확인",
+    "group": "온도·히터",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "0 ~ 32.1",
+    "sample_observation": "0.0 ~ 32.1"
+  },
+  {
+    "name": "Temp_Monitor_U",
+    "description": "온도 모니터 계열. 설정값·Act와 별도 채널이며 센서 위치 관계는 미확인.",
+    "unit": "℃ (계열 해석)",
+    "group": "온도·히터",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "299.9 ~ 535.3",
+    "sample_observation": "299.5 ~ 570.2"
+  },
+  {
+    "name": "Temp_TC_Monitor_U",
+    "description": "TC 온도 모니터 계열. 대응 Temp_Monitor와 모든 행에서 동일.",
+    "unit": "℃ (계열 해석)",
+    "group": "온도·히터",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "299.9 ~ 535.3",
+    "sample_observation": "299.5 ~ 570.2"
+  },
+  {
+    "name": "Temp_TC_Cascade_U",
+    "description": "Inner TC 온도 계열. U는 Excel 설명, 나머지 구역은 이름·계열에 따른 해석. 실제 CSV 헤더 끝에 공백 1개 존재.",
+    "unit": "℃ (계열 해석)",
+    "group": "온도·히터",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "302.5 ~ 538.1",
+    "sample_observation": "302.0 ~ 570.1"
+  },
+  {
+    "name": "Temp_Act_U",
+    "description": "현재 온도 계열. U는 Excel 설명, 나머지 구역은 동일 계열 해석.",
+    "unit": "℃ (계열 해석)",
+    "group": "온도·히터",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "238 ~ 473.4",
+    "sample_observation": "237.6 ~ 508.3"
+  },
+  {
+    "name": "Temp_HT_Power_Cascade_U",
+    "description": "Cascade 히터 출력 계열. Excel은 전 구역 0 유지라고 기록.",
+    "unit": "미확인",
+    "group": "온도·히터",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "전 행 0",
+    "sample_observation": "8파일 모두 0"
+  },
+  {
+    "name": "Temp_Set_CU",
+    "description": "설정 온도 계열. U는 Excel 설명, 나머지 구역은 동일 계열 해석.",
+    "unit": "℃ (계열 해석)",
+    "group": "온도·히터",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "254.2 ~ 484.2",
+    "sample_observation": "254.2 ~ 524.2"
+  },
+  {
+    "name": "Temp_HT_Power_CU",
+    "description": "히터 출력 계열로 추정. Excel 설명·단위 셀은 비어 있음.",
+    "unit": "미확인",
+    "group": "온도·히터",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "0 ~ 28.7",
+    "sample_observation": "0.0 ~ 28.7"
+  },
+  {
+    "name": "Temp_Monitor_CU",
+    "description": "온도 모니터 계열. 설정값·Act와 별도 채널이며 센서 위치 관계는 미확인.",
+    "unit": "℃ (계열 해석)",
+    "group": "온도·히터",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "299.9 ~ 535.7",
+    "sample_observation": "299.9 ~ 570.4"
+  },
+  {
+    "name": "Temp_TC_Monitor_CU",
+    "description": "TC 온도 모니터 계열. 대응 Temp_Monitor와 모든 행에서 동일.",
+    "unit": "℃ (계열 해석)",
+    "group": "온도·히터",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "299.9 ~ 535.7",
+    "sample_observation": "299.9 ~ 570.4"
+  },
+  {
+    "name": "Temp_TC_Cascade_CU",
+    "description": "Excel에 고장 메모가 있으며 이 대표 파일은 전 행 0. 현재 고장 여부를 독립 진단한 것은 아님.",
+    "unit": "℃ (계열 해석)",
+    "group": "온도·히터",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "전 행 0",
+    "sample_observation": "8파일 모두 0"
+  },
+  {
+    "name": "Temp_Act_CU",
+    "description": "현재 온도 계열. U는 Excel 설명, 나머지 구역은 동일 계열 해석.",
+    "unit": "℃ (계열 해석)",
+    "group": "온도·히터",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "254.1 ~ 489.9",
+    "sample_observation": "254.1 ~ 524.6"
+  },
+  {
+    "name": "Temp_HT_Power_Cascade_CU",
+    "description": "Cascade 히터 출력 계열. Excel은 전 구역 0 유지라고 기록.",
+    "unit": "미확인",
+    "group": "온도·히터",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "전 행 0",
+    "sample_observation": "8파일 모두 0"
+  },
+  {
+    "name": "Temp_Set_C",
+    "description": "설정 온도 계열. U는 Excel 설명, 나머지 구역은 동일 계열 해석.",
+    "unit": "℃ (계열 해석)",
+    "group": "온도·히터",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "251.5 ~ 481.5",
+    "sample_observation": "251.5 ~ 521.5"
+  },
+  {
+    "name": "Temp_HT_Power_C",
+    "description": "히터 출력 계열로 추정. Excel 설명·단위 셀은 비어 있음.",
+    "unit": "미확인",
+    "group": "온도·히터",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "0 ~ 27.5",
+    "sample_observation": "0.0 ~ 27.5"
+  },
+  {
+    "name": "Temp_Monitor_C",
+    "description": "온도 모니터 계열. 설정값·Act와 별도 채널이며 센서 위치 관계는 미확인.",
+    "unit": "℃ (계열 해석)",
+    "group": "온도·히터",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "300.1 ~ 534.2",
+    "sample_observation": "299.5 ~ 570.2"
+  },
+  {
+    "name": "Temp_TC_Monitor_C",
+    "description": "TC 온도 모니터 계열. 대응 Temp_Monitor와 모든 행에서 동일.",
+    "unit": "℃ (계열 해석)",
+    "group": "온도·히터",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "300.1 ~ 534.2",
+    "sample_observation": "299.5 ~ 570.2"
+  },
+  {
+    "name": "Temp_TC_Cascade_C",
+    "description": "Inner TC 온도 계열. U는 Excel 설명, 나머지 구역은 이름·계열에 따른 해석.",
+    "unit": "℃ (계열 해석)",
+    "group": "온도·히터",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "304.7 ~ 542.6",
+    "sample_observation": "299.1 ~ 569.8"
+  },
+  {
+    "name": "Temp_Act_C",
+    "description": "현재 온도 계열. U는 Excel 설명, 나머지 구역은 동일 계열 해석.",
+    "unit": "℃ (계열 해석)",
+    "group": "온도·히터",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "251.6 ~ 485.7",
+    "sample_observation": "251.0 ~ 521.7"
+  },
+  {
+    "name": "Temp_HT_Power_Cascade_C",
+    "description": "Cascade 히터 출력 계열. Excel은 전 구역 0 유지라고 기록.",
+    "unit": "미확인",
+    "group": "온도·히터",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "전 행 0",
+    "sample_observation": "8파일 모두 0"
+  },
+  {
+    "name": "Temp_Set_CL",
+    "description": "설정 온도 계열. U는 Excel 설명, 나머지 구역은 동일 계열 해석.",
+    "unit": "℃ (계열 해석)",
+    "group": "온도·히터",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "254 ~ 484",
+    "sample_observation": "254.0 ~ 524.0"
+  },
+  {
+    "name": "Temp_HT_Power_CL",
+    "description": "히터 출력 계열로 추정. Excel 설명·단위 셀은 비어 있음.",
+    "unit": "미확인",
+    "group": "온도·히터",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "0 ~ 33.9",
+    "sample_observation": "0.0 ~ 33.9"
+  },
+  {
+    "name": "Temp_Monitor_CL",
+    "description": "온도 모니터 계열. 설정값·Act와 별도 채널이며 센서 위치 관계는 미확인.",
+    "unit": "℃ (계열 해석)",
+    "group": "온도·히터",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "299.9 ~ 533.6",
+    "sample_observation": "299.3 ~ 570.3"
+  },
+  {
+    "name": "Temp_TC_Monitor_CL",
+    "description": "TC 온도 모니터 계열. 대응 Temp_Monitor와 모든 행에서 동일.",
+    "unit": "℃ (계열 해석)",
+    "group": "온도·히터",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "299.9 ~ 533.6",
+    "sample_observation": "299.3 ~ 570.3"
+  },
+  {
+    "name": "Temp_TC_Cascade_CL",
+    "description": "Inner TC 온도 계열. U는 Excel 설명, 나머지 구역은 이름·계열에 따른 해석.",
+    "unit": "℃ (계열 해석)",
+    "group": "온도·히터",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "300.6 ~ 541.1",
+    "sample_observation": "297.0 ~ 567.8"
+  },
+  {
+    "name": "Temp_Act_CL",
+    "description": "현재 온도 계열. U는 Excel 설명, 나머지 구역은 동일 계열 해석.",
+    "unit": "℃ (계열 해석)",
+    "group": "온도·히터",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "253.9 ~ 487.6",
+    "sample_observation": "253.3 ~ 524.3"
+  },
+  {
+    "name": "Temp_HT_Power_Cascade_CL",
+    "description": "Cascade 히터 출력 계열. Excel은 전 구역 0 유지라고 기록.",
+    "unit": "미확인",
+    "group": "온도·히터",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "전 행 0",
+    "sample_observation": "8파일 모두 0"
+  },
+  {
+    "name": "Temp_Set_L",
+    "description": "설정 온도 계열. U는 Excel 설명, 나머지 구역은 동일 계열 해석.",
+    "unit": "℃ (계열 해석)",
+    "group": "온도·히터",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "274 ~ 504",
+    "sample_observation": "274.0 ~ 544.0"
+  },
+  {
+    "name": "Temp_HT_Power_L",
+    "description": "히터 출력 계열로 추정. Excel 설명·단위 셀은 비어 있음.",
+    "unit": "미확인",
+    "group": "온도·히터",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "0 ~ 52.1",
+    "sample_observation": "0.0 ~ 52.1"
+  },
+  {
+    "name": "Temp_Monitor_L",
+    "description": "온도 모니터 계열. 설정값·Act와 별도 채널이며 센서 위치 관계는 미확인.",
+    "unit": "℃ (계열 해석)",
+    "group": "온도·히터",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "299.7 ~ 537.6",
+    "sample_observation": "298.6 ~ 570.3"
+  },
+  {
+    "name": "Temp_TC_Monitor_L",
+    "description": "TC 온도 모니터 계열. 대응 Temp_Monitor와 모든 행에서 동일.",
+    "unit": "℃ (계열 해석)",
+    "group": "온도·히터",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "299.7 ~ 537.6",
+    "sample_observation": "298.6 ~ 570.3"
+  },
+  {
+    "name": "Temp_TC_Cascade_L",
+    "description": "Inner TC 온도 계열. U는 Excel 설명, 나머지 구역은 이름·계열에 따른 해석.",
+    "unit": "℃ (계열 해석)",
+    "group": "온도·히터",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "294.4 ~ 526.9",
+    "sample_observation": "293.4 ~ 569.6"
+  },
+  {
+    "name": "Temp_Act_L",
+    "description": "현재 온도 계열. U는 Excel 설명, 나머지 구역은 동일 계열 해석.",
+    "unit": "℃ (계열 해석)",
+    "group": "온도·히터",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "273.7 ~ 511.6",
+    "sample_observation": "272.6 ~ 544.3"
+  },
+  {
+    "name": "Temp_HT_Power_Cascade_L",
+    "description": "Cascade 히터 출력 계열. Excel은 전 구역 0 유지라고 기록.",
+    "unit": "미확인",
+    "group": "온도·히터",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "전 행 0",
+    "sample_observation": "8파일 모두 0"
+  },
+  {
+    "name": "APC Valve Value (Angle)",
+    "description": "압력을 조절하는 APC 밸브 개방 각도/제어값. Excel은 0~100으로 설명하며 물리 각도 단위는 명시하지 않음.",
+    "unit": "0~100 제어값",
+    "group": "압력·APC",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "0 ~ 100",
+    "sample_observation": "0.0 ~ 100.0"
+  },
+  {
+    "name": "VG13_LeakPressure_Monitor",
+    "description": "Leak Check 관련 압력 보고값. Excel은 격리 초기 P1·완료 P2 개념을 설명하나 이 필드의 갱신 규칙은 미확인.",
+    "unit": "압력 단위 미명시",
+    "group": "압력·APC",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "0.006 ~ 0.06",
+    "sample_observation": "0.006 ~ 0.060"
+  },
+  {
+    "name": "VG11_LeakPressure_Monitor",
+    "description": "VG11 Leak Check 압력 계열로 추정. Excel 설명 셀은 비어 있음.",
+    "unit": "미확인",
+    "group": "압력·APC",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "전 행 0",
+    "sample_observation": "8파일 모두 0"
+  },
+  {
+    "name": "VG13_LeakQuantity_Monitor",
+    "description": "Leak Check 계산 보고값. Excel의 ΔP 설명과 Torr/min 표기만으로 정확한 계산식·시간 기준을 확정할 수 없음.",
+    "unit": "Torr/min (Excel)",
+    "group": "압력·APC",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "0 ~ 0.053",
+    "sample_observation": "0.000 ~ 0.053"
+  },
+  {
+    "name": "VG11_LeakQuantity_Monitor",
+    "description": "VG11 Leak Check 계산 계열로 추정. Excel 설명 셀은 비어 있음.",
+    "unit": "미확인",
+    "group": "압력·APC",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "전 행 0",
+    "sample_observation": "8파일 모두 0"
+  },
+  {
+    "name": "VG13 Press value",
+    "description": "10 Torr 범위 Process용 진공 게이지의 압력값.",
+    "unit": "Torr",
+    "group": "압력·APC",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "0.006 ~ 3.464",
+    "sample_observation": "0.006 ~ 7.239"
+  },
+  {
+    "name": "VG11 Press value",
+    "description": "1000 Torr 범위 진공 게이지. 대기압부터 진공으로 내려가는 구간을 확인.",
+    "unit": "Torr",
+    "group": "압력·APC",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "0.8 ~ 754.7",
+    "sample_observation": "0.7 ~ 765.5"
+  },
+  {
+    "name": "VG12_LeakPressure_Monitor",
+    "description": "VG12 Leak Check 압력 계열로 추정. Excel 설명 셀은 비어 있음.",
+    "unit": "미확인",
+    "group": "압력·APC",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "전 행 0",
+    "sample_observation": "8파일 모두 0"
+  },
+  {
+    "name": "VG12 Press value",
+    "description": "1 Torr 범위 비교용 진공 게이지. Excel의 추가 스케일 추정 메모는 미확인.",
+    "unit": "Torr",
+    "group": "압력·APC",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "0.009 ~ 1.2429",
+    "sample_observation": "0.0090 ~ 1.2454"
+  },
+  {
+    "name": "ValveAct_1:1",
+    "description": "장비 액추에이터 상태 채널. OPEN/CLOSE가 관측되며 Excel은 개별 밸브의 위치·용도를 설명하지 않음.",
+    "unit": "문자열 상태",
+    "group": "밸브·액추에이터",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "OPEN / CLOSE",
+    "sample_observation": "OPEN / CLOSE"
+  },
+  {
+    "name": "ValveAct_2:2",
+    "description": "장비 액추에이터 상태 채널. OPEN/CLOSE가 관측되며 Excel은 개별 밸브의 위치·용도를 설명하지 않음.",
+    "unit": "문자열 상태",
+    "group": "밸브·액추에이터",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "OPEN / CLOSE",
+    "sample_observation": "OPEN / CLOSE"
+  },
+  {
+    "name": "ValveAct_3:3",
+    "description": "장비 액추에이터 상태 채널. OPEN/CLOSE가 관측되며 Excel은 개별 밸브의 위치·용도를 설명하지 않음.",
+    "unit": "문자열 상태",
+    "group": "밸브·액추에이터",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "OPEN / CLOSE",
+    "sample_observation": "OPEN / CLOSE"
+  },
+  {
+    "name": "ValveAct_4:4",
+    "description": "장비 액추에이터 상태 채널. OPEN/CLOSE가 관측되며 Excel은 개별 밸브의 위치·용도를 설명하지 않음.",
+    "unit": "문자열 상태",
+    "group": "밸브·액추에이터",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "OPEN / CLOSE",
+    "sample_observation": "OPEN / CLOSE"
+  },
+  {
+    "name": "ValveAct_5:5",
+    "description": "장비 액추에이터 상태 채널. OPEN/CLOSE가 관측되며 Excel은 개별 밸브의 위치·용도를 설명하지 않음.",
+    "unit": "문자열 상태",
+    "group": "밸브·액추에이터",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "OPEN / CLOSE",
+    "sample_observation": "OPEN / CLOSE"
+  },
+  {
+    "name": "ValveAct_9:9",
+    "description": "장비 액추에이터 상태 채널. OPEN/CLOSE가 관측되며 Excel은 개별 밸브의 위치·용도를 설명하지 않음.",
+    "unit": "문자열 상태",
+    "group": "밸브·액추에이터",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "OPEN / CLOSE",
+    "sample_observation": "OPEN / CLOSE"
+  },
+  {
+    "name": "ValveAct_11:11",
+    "description": "장비 액추에이터 상태 채널. OPEN/CLOSE가 관측되며 Excel은 개별 밸브의 위치·용도를 설명하지 않음.",
+    "unit": "문자열 상태",
+    "group": "밸브·액추에이터",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "OPEN / CLOSE",
+    "sample_observation": "OPEN / CLOSE"
+  },
+  {
+    "name": "ValveAct_12:12",
+    "description": "장비 액추에이터 상태 채널. OPEN/CLOSE가 관측되며 Excel은 개별 밸브의 위치·용도를 설명하지 않음.",
+    "unit": "문자열 상태",
+    "group": "밸브·액추에이터",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "OPEN / CLOSE",
+    "sample_observation": "OPEN / CLOSE"
+  },
+  {
+    "name": "ValveAct_14:14",
+    "description": "장비 액추에이터 상태 채널. OPEN/CLOSE가 관측되며 Excel은 개별 밸브의 위치·용도를 설명하지 않음.",
+    "unit": "문자열 상태",
+    "group": "밸브·액추에이터",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "OPEN / CLOSE",
+    "sample_observation": "OPEN / CLOSE"
+  },
+  {
+    "name": "ValveAct_15:15",
+    "description": "장비 액추에이터 상태 채널. OPEN/CLOSE가 관측되며 Excel은 개별 밸브의 위치·용도를 설명하지 않음.",
+    "unit": "문자열 상태",
+    "group": "밸브·액추에이터",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "OPEN / CLOSE",
+    "sample_observation": "OPEN / CLOSE"
+  },
+  {
+    "name": "ValveAct_16:16",
+    "description": "장비 액추에이터 상태 채널. OPEN/CLOSE가 관측되며 Excel은 개별 밸브의 위치·용도를 설명하지 않음.",
+    "unit": "문자열 상태",
+    "group": "밸브·액추에이터",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "OPEN / CLOSE",
+    "sample_observation": "OPEN / CLOSE"
+  },
+  {
+    "name": "ValveAct_26:26",
+    "description": "장비 액추에이터 상태 채널. OPEN/CLOSE가 관측되며 Excel은 개별 밸브의 위치·용도를 설명하지 않음.",
+    "unit": "문자열 상태",
+    "group": "밸브·액추에이터",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "OPEN / CLOSE",
+    "sample_observation": "OPEN / CLOSE"
+  },
+  {
+    "name": "ValveAct_28:28",
+    "description": "장비 액추에이터 상태 채널. OPEN/CLOSE가 관측되며 Excel은 개별 밸브의 위치·용도를 설명하지 않음.",
+    "unit": "문자열 상태",
+    "group": "밸브·액추에이터",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "OPEN / CLOSE",
+    "sample_observation": "OPEN / CLOSE"
+  },
+  {
+    "name": "ValveAct_29:29",
+    "description": "장비 액추에이터 상태 채널. OPEN/CLOSE가 관측되며 Excel은 개별 밸브의 위치·용도를 설명하지 않음.",
+    "unit": "문자열 상태",
+    "group": "밸브·액추에이터",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "OPEN / CLOSE",
+    "sample_observation": "OPEN / CLOSE"
+  },
+  {
+    "name": "ValveAct_30:30",
+    "description": "장비 액추에이터 상태 채널. OPEN/CLOSE가 관측되며 Excel은 개별 밸브의 위치·용도를 설명하지 않음.",
+    "unit": "문자열 상태",
+    "group": "밸브·액추에이터",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "OPEN / CLOSE",
+    "sample_observation": "OPEN / CLOSE"
+  },
+  {
+    "name": "ValveAct_60:71",
+    "description": "장비 액추에이터 상태 채널. OPEN/CLOSE가 관측되며 Excel은 개별 밸브의 위치·용도를 설명하지 않음.",
+    "unit": "문자열 상태",
+    "group": "밸브·액추에이터",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "OPEN / CLOSE",
+    "sample_observation": "OPEN / CLOSE"
+  },
+  {
+    "name": "ValveAct_63:75",
+    "description": "장비 액추에이터 상태 채널. OPEN/CLOSE가 관측되며 Excel은 개별 밸브의 위치·용도를 설명하지 않음.",
+    "unit": "문자열 상태",
+    "group": "밸브·액추에이터",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "OPEN / CLOSE",
+    "sample_observation": "OPEN / CLOSE"
+  },
+  {
+    "name": "ValveAct_73:83",
+    "description": "장비 액추에이터 상태 채널. OPEN/CLOSE가 관측되며 Excel은 개별 밸브의 위치·용도를 설명하지 않음.",
+    "unit": "문자열 상태",
+    "group": "밸브·액추에이터",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "OPEN / CLOSE",
+    "sample_observation": "OPEN / CLOSE"
+  },
+  {
+    "name": "ValveAct_75:85",
+    "description": "장비 액추에이터 상태 채널. OPEN/CLOSE가 관측되며 Excel은 개별 밸브의 위치·용도를 설명하지 않음.",
+    "unit": "문자열 상태",
+    "group": "밸브·액추에이터",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "OPEN / CLOSE",
+    "sample_observation": "OPEN / CLOSE"
+  },
+  {
+    "name": "ValveAct_76:86",
+    "description": "장비 액추에이터 상태 채널. OPEN/CLOSE가 관측되며 Excel은 개별 밸브의 위치·용도를 설명하지 않음.",
+    "unit": "문자열 상태",
+    "group": "밸브·액추에이터",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "OPEN / CLOSE",
+    "sample_observation": "OPEN / CLOSE"
+  },
+  {
+    "name": "ValveAct_80:DPO",
+    "description": "장비 액추에이터 상태 채널. OPEN/CLOSE가 관측되며 Excel은 개별 밸브의 위치·용도를 설명하지 않음.",
+    "unit": "문자열 상태",
+    "group": "밸브·액추에이터",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "OPEN / CLOSE",
+    "sample_observation": "OPEN / CLOSE"
+  },
+  {
+    "name": "ValveAct_86:HT1",
+    "description": "장비 액추에이터 상태 채널. OPEN/CLOSE가 관측되며 Excel은 개별 밸브의 위치·용도를 설명하지 않음.",
+    "unit": "문자열 상태",
+    "group": "밸브·액추에이터",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "상수 `OPEN`",
+    "sample_observation": "8파일 고정 OPEN"
+  },
+  {
+    "name": "ValveAct_87:HT2",
+    "description": "장비 액추에이터 상태 채널. OPEN/CLOSE가 관측되며 Excel은 개별 밸브의 위치·용도를 설명하지 않음.",
+    "unit": "문자열 상태",
+    "group": "밸브·액추에이터",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "상수 `OPEN`",
+    "sample_observation": "8파일 고정 OPEN"
+  },
+  {
+    "name": "ValveAct_88:HT3",
+    "description": "장비 액추에이터 상태 채널. OPEN/CLOSE가 관측되며 Excel은 개별 밸브의 위치·용도를 설명하지 않음.",
+    "unit": "문자열 상태",
+    "group": "밸브·액추에이터",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "상수 `OPEN`",
+    "sample_observation": "8파일 고정 OPEN"
+  },
+  {
+    "name": "ValveAct_89:RF",
+    "description": "장비 액추에이터 상태 채널. OPEN/CLOSE가 관측되며 Excel은 개별 밸브의 위치·용도를 설명하지 않음.",
+    "unit": "문자열 상태",
+    "group": "밸브·액추에이터",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "OPEN / CLOSE",
+    "sample_observation": "OPEN / CLOSE"
+  },
+  {
+    "name": "ValveAct_90:PST",
+    "description": "장비 액추에이터 상태 채널. OPEN/CLOSE가 관측되며 Excel은 개별 밸브의 위치·용도를 설명하지 않음.",
+    "unit": "문자열 상태",
+    "group": "밸브·액추에이터",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "OPEN / CLOSE",
+    "sample_observation": "OPEN / CLOSE"
+  },
+  {
+    "name": "ValveAct_95:WAT",
+    "description": "장비 액추에이터 상태 채널. OPEN/CLOSE가 관측되며 Excel은 개별 밸브의 위치·용도를 설명하지 않음.",
+    "unit": "문자열 상태",
+    "group": "밸브·액추에이터",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "상수 `OPEN`",
+    "sample_observation": "8파일 고정 OPEN"
+  },
+  {
+    "name": "MFC1_N2-1",
+    "description": "N2-1 유량 계열. Excel은 MFC Flow Setting 값으로 설명.",
+    "unit": "SLM",
+    "group": "가스·RF",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "0 ~ 2.001",
+    "sample_observation": "-0.264 ~ 3.149"
+  },
+  {
+    "name": "MFC2_N2-2",
+    "description": "열 이름은 N2-2, Excel 설명에는 N2-3으로 적혀 있어 채널 매핑 확인 필요.",
+    "unit": "SLM",
+    "group": "가스·RF",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "0 ~ 5",
+    "sample_observation": "0.000 ~ 5.000"
+  },
+  {
+    "name": "MFC3_N2-3",
+    "description": "N2-3 유량. Excel은 위치와 용도를 추정으로 기록.",
+    "unit": "SLM",
+    "group": "가스·RF",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "0 ~ 5",
+    "sample_observation": "0.000 ~ 5.000"
+  },
+  {
+    "name": "MFC4_N2-4",
+    "description": "N2-4 MFC 설정값으로 설명.",
+    "unit": "SLM",
+    "group": "가스·RF",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "0 ~ 1.002",
+    "sample_observation": "-0.264 ~ 2.991"
+  },
+  {
+    "name": "MFC7_DCS",
+    "description": "DCS(SiH2Cl2) MFC 설정값으로 설명; 실리콘 소스 가스.",
+    "unit": "SLM",
+    "group": "가스·RF",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "0 ~ 1.205",
+    "sample_observation": "-0.770 ~ 1.598"
+  },
+  {
+    "name": "MFC8_NH3",
+    "description": "NH3 MFC 설정값으로 설명; 반응 가스.",
+    "unit": "SLM",
+    "group": "가스·RF",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "0 ~ 6.602",
+    "sample_observation": "0.000 ~ 7.637"
+  },
+  {
+    "name": "MFC9_F2",
+    "description": "F2 MFC 설정값으로 설명; 이 대표 파일은 전 행 0.",
+    "unit": "SLM",
+    "group": "가스·RF",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "전 행 0",
+    "sample_observation": "8파일 모두 0"
+  },
+  {
+    "name": "MFC10_N2-R",
+    "description": "Rotation 축 보호용 N2-R 유량.",
+    "unit": "SLM",
+    "group": "가스·RF",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "0 ~ 0.3",
+    "sample_observation": "0.000 ~ 0.315"
+  },
+  {
+    "name": "MFC11_NO",
+    "description": "NO 유량 채널. Excel은 미사용으로 설명.",
+    "unit": "SLM",
+    "group": "가스·RF",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "전 행 0",
+    "sample_observation": "8파일 모두 0"
+  },
+  {
+    "name": "MFC12_DCSMFM_7",
+    "description": "DCS Purge line N2 유량 확인용 MFM. 이 파일에는 작은 음수도 존재.",
+    "unit": "SLM",
+    "group": "가스·RF",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "-0.045 ~ 0",
+    "sample_observation": "-0.268 ~ 0.107"
+  },
+  {
+    "name": "MFC16_MFC51 N2",
+    "description": "Excel은 미사용으로 설명하지만 실제 데이터는 음수 2종으로 변동. 물리 의미·단위 미확인.",
+    "unit": "미확인",
+    "group": "가스·RF",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "-16.602 ~ -16.113",
+    "sample_observation": "-16.602 ~ -16.113"
+  },
+  {
+    "name": "MFC26_F.PWR",
+    "description": "RF Plasma Forward Power. MFC 접두어지만 유량이 아닌 전력 채널.",
+    "unit": "W (Excel: Watt)",
+    "group": "가스·RF",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "0 ~ 0.299",
+    "sample_observation": "0.000 ~ 0.299"
+  },
+  {
+    "name": "MFC27_L.POS",
+    "description": "RF Matcher Load Position. 음수 값도 있어 스케일·상태 의미 확인 필요.",
+    "unit": "% (Excel)",
+    "group": "가스·RF",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "-5.371 ~ 41.895",
+    "sample_observation": "-5.469 ~ 41.895"
+  },
+  {
+    "name": "MFC28_R.POS",
+    "description": "RF Matcher Phase Position. 100 초과 값도 있어 스케일·상태 의미 확인 필요.",
+    "unit": "% (Excel)",
+    "group": "가스·RF",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "-5.469 ~ 146.875",
+    "sample_observation": "-5.469 ~ 147.363"
+  },
+  {
+    "name": "AUX1_MS1",
+    "description": "Heater Exhaust 압력",
+    "unit": "pa",
+    "group": "보조 센서",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "31.833 ~ 36.867",
+    "sample_observation": "31.600 ~ 40.000"
+  },
+  {
+    "name": "AUX2_MS321",
+    "description": "Loading Area 압력",
+    "unit": "pa",
+    "group": "보조 센서",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "11.667 ~ 16.4",
+    "sample_observation": "9.933 ~ 16.033"
+  },
+  {
+    "name": "AUX3_MS2",
+    "description": "Gas Box Exhaust 압력",
+    "unit": "pa",
+    "group": "보조 센서",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "64.3 ~ 69.833",
+    "sample_observation": "65.100 ~ 88.700"
+  },
+  {
+    "name": "AUX4_MS3",
+    "description": "Scavenger Exhaust 압력",
+    "unit": "pa",
+    "group": "보조 센서",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "59.7 ~ 64.967",
+    "sample_observation": "60.333 ~ 78.533"
+  },
+  {
+    "name": "AUX5_MS5",
+    "description": "Loading Area Exhaust 압력",
+    "unit": "pa",
+    "group": "보조 센서",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "85.833 ~ 89.833",
+    "sample_observation": "86.417 ~ 108.667"
+  },
+  {
+    "name": "AUX8_MS8",
+    "description": "RHC(Rapid Heater Cooling) 배기 압력. Excel 설명은 kPa, 단위 셀은 pa로 충돌.",
+    "unit": "kPa / Pa 충돌",
+    "group": "보조 센서",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "0.094 ~ 0.106",
+    "sample_observation": "0.087 ~ 0.108"
+  },
+  {
+    "name": "AUX9_MS9",
+    "description": "Valve Exhaust 압력",
+    "unit": "pa",
+    "group": "보조 센서",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "61.067 ~ 65.033",
+    "sample_observation": "61.967 ~ 78.100"
+  },
+  {
+    "name": "AUX16_VG21",
+    "description": "DCS Tank Pressure",
+    "unit": "Torr",
+    "group": "보조 센서",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "3.533 ~ 100",
+    "sample_observation": "0.100 ~ 100.000"
+  },
+  {
+    "name": "AUX18_VG12",
+    "description": "1Torr 압력 Sensor로 비교 확인용",
+    "unit": "Torr",
+    "group": "보조 센서",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "0.009 ~ 1",
+    "sample_observation": "0.009 ~ 1.000"
+  },
+  {
+    "name": "AUX19_VG11",
+    "description": "1000Torr 압력 Sensor로 대기압에서 Pumping 상태 0torr 까지의 압력 확인용",
+    "unit": "Torr",
+    "group": "보조 센서",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "0.067 ~ 75.4",
+    "sample_observation": "0.050 ~ 76.500"
+  },
+  {
+    "name": "AUX20_VG13",
+    "description": "10Torr 압력 Sensor로 Deposition 진행시에 압력 확인용",
+    "unit": "Torr",
+    "group": "보조 센서",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "0.003 ~ 2.812",
+    "sample_observation": "0.003 ~ 7.233"
+  },
+  {
+    "name": "AUX21_M.WAT",
+    "description": "PCW(Process Cooling Water) Main Flow 압력",
+    "unit": "Mpa",
+    "group": "보조 센서",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "0.406 ~ 0.419",
+    "sample_observation": "0.399 ~ 0.458"
+  },
+  {
+    "name": "AUX22_FS101",
+    "description": "Machine의 PCW(Process Cooling Water)의 메인 유량을 확인하기 위한 Sensor",
+    "unit": "LPM",
+    "group": "보조 센서",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "37.587 ~ 38.373",
+    "sample_observation": "37.320 ~ 39.800"
+  },
+  {
+    "name": "AUX23_FS102",
+    "description": "Tube Flange의 PCW유량을 확인하기 위한 센서",
+    "unit": "LPM",
+    "group": "보조 센서",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "1.763 ~ 1.823",
+    "sample_observation": "1.688 ~ 1.863"
+  },
+  {
+    "name": "AUX24_FS104",
+    "description": "Auto Shutter의 PCW 유량을 확인하기 위한 센서",
+    "unit": "LPM",
+    "group": "보조 센서",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "3.222 ~ 3.269",
+    "sample_observation": "3.064 ~ 3.410"
+  },
+  {
+    "name": "AUX26_FS106",
+    "description": "Heater Jacket부분 PCW 유량",
+    "unit": "LPM",
+    "group": "보조 센서",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "4.216 ~ 4.295",
+    "sample_observation": "4.148 ~ 4.457"
+  },
+  {
+    "name": "AUX28_FS111",
+    "description": "Magnetic Seal의 PCW유량을 확인함",
+    "unit": "LPM",
+    "group": "보조 센서",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "1.963 ~ 2.019",
+    "sample_observation": "1.967 ~ 3.153"
+  },
+  {
+    "name": "AUX29_FS105",
+    "description": "RHC(Rapid Heater Cooling) Unit의 PCW유량",
+    "unit": "LPM",
+    "group": "보조 센서",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "15.86 ~ 16.18",
+    "sample_observation": "15.720 ~ 16.705"
+  },
+  {
+    "name": "AUX33_G.PS1",
+    "description": "Gas N2-1의 압력 N2-1은 장비 내부 Purge용 N2임",
+    "unit": "Mpa",
+    "group": "보조 센서",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "0.273 ~ 0.322",
+    "sample_observation": "0.273 ~ 0.322"
+  },
+  {
+    "name": "AUX34_G.PS2",
+    "description": "DCS(SiH2Cl2) Gas 의 공급 압력, DCS는 장비 Process용 Source Gas임",
+    "unit": "Mpa",
+    "group": "보조 센서",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "0.022 ~ 0.04",
+    "sample_observation": "0.015 ~ 0.045"
+  },
+  {
+    "name": "AUX35_G.PS3",
+    "description": "NH3 Gas의 공급압력 NH3는 Process용 Reactant Gas",
+    "unit": "Mpa",
+    "group": "보조 센서",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "0.094 ~ 0.129",
+    "sample_observation": "0.095 ~ 0.135"
+  },
+  {
+    "name": "AUX36_G.PS4",
+    "description": "N2-2 Gas의 공급 압력 N2-2는 N2-1과 같은 장비 Purge용N2",
+    "unit": "Mpa",
+    "group": "보조 센서",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "상수 `0.332`",
+    "sample_observation": "0.324 ~ 0.340"
+  },
+  {
+    "name": "AUX37_G.PS5",
+    "description": "F2 Gas 공급 압력. 대표 파일은 0이지만 다른 날짜 샘플에서는 양수도 관측; 전체 미사용 열로 분류하지 않음.",
+    "unit": "Mpa",
+    "group": "보조 센서",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "전 행 0",
+    "sample_observation": "0.000 ~ 0.435"
+  },
+  {
+    "name": "AUX38_G.PS6",
+    "description": "NO Gas의 공급 압력 NO Gas는 미사용",
+    "unit": "Mpa",
+    "group": "보조 센서",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "0.387 ~ 0.388",
+    "sample_observation": "0.384 ~ 0.390"
+  },
+  {
+    "name": "AUX45_G.PS13",
+    "description": "Process 완료 후 Cooling용 N2의 공급 압력",
+    "unit": "Mpa",
+    "group": "보조 센서",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "0.342 ~ 0.343",
+    "sample_observation": "0.340 ~ 0.347"
+  },
+  {
+    "name": "AUX46_G.PS14",
+    "description": "L/A(Loading Area)의 N2치환을 위한 공급 N2압력-1",
+    "unit": "Mpa",
+    "group": "보조 센서",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "0.471 ~ 0.472",
+    "sample_observation": "0.470 ~ 0.475"
+  },
+  {
+    "name": "AUX47_G.PS15",
+    "description": "L/A(Loading Area)의 N2치환을 위한 공급 N2압력-2",
+    "unit": "Mpa",
+    "group": "보조 센서",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "0.627 ~ 0.628",
+    "sample_observation": "0.619 ~ 0.627"
+  },
+  {
+    "name": "AUX48_G.PS16",
+    "description": "POD(FOUP의 열리는 공간)의 N2치환을 위한 공급 N2압력",
+    "unit": "Mpa",
+    "group": "보조 센서",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "0.683 ~ 0.69",
+    "sample_observation": "0.678 ~ 0.704"
+  },
+  {
+    "name": "AUX50_Vpp",
+    "description": "RF Plasma Source의 Vpp Data Voltage의 Peak to Peak값입니다.",
+    "unit": "Voltage",
+    "group": "보조 센서",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "0.001 ~ 0.487",
+    "sample_observation": "0.001 ~ 0.488"
+  },
+  {
+    "name": "AUX51_Vdc",
+    "description": "RF Plasma Vdc. Excel상 미사용 Parameter이나 대표 파일은 -1/-0.999 두 값.",
+    "unit": "V (Excel: Voltage)",
+    "group": "보조 센서",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "-1 ~ -0.999",
+    "sample_observation": "-1.000"
+  },
+  {
+    "name": "AUX52_R.PWR",
+    "description": "Excel은 0 및 플라즈마 전력 추정 메모만 제공. 실제는 변동하므로 확정 미사용 열로 보지 않음.",
+    "unit": "미확인",
+    "group": "보조 센서",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "0 ~ 92.817",
+    "sample_observation": "0.000 ~ 80.283"
+  },
+  {
+    "name": "AUX53_DCS_IN",
+    "description": "Gas Line에서 DCS(SiH2Cl2) Gas Line의 온도",
+    "unit": "℃",
+    "group": "보조 센서",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "39.8 ~ 40.2",
+    "sample_observation": "39.800 ~ 40.200"
+  },
+  {
+    "name": "AUX54_IGS_DCS",
+    "description": "Gas Line에서 DCS(SiH2Cl2) Gas Line의 온도",
+    "unit": "℃",
+    "group": "보조 센서",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "39.8 ~ 40.267",
+    "sample_observation": "39.800 ~ 40.400"
+  },
+  {
+    "name": "AUX56_DCS1_PIP",
+    "description": "Gas Line에서 DCS(SiH2Cl2) Gas Line의 온도",
+    "unit": "℃",
+    "group": "보조 센서",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "39.8 ~ 40.2",
+    "sample_observation": "39.800 ~ 40.267"
+  },
+  {
+    "name": "AUX58_PURGE-1",
+    "description": "Gas Line에서 DCS(SiH2Cl2) Purge Gas Line의 온도",
+    "unit": "℃",
+    "group": "보조 센서",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "39.8 ~ 40.2",
+    "sample_observation": "39.800 ~ 40.600"
+  },
+  {
+    "name": "AUX59_DCS_TANK",
+    "description": "DCS(SiH2Cl2) Gas의 Tank 부분의 Heating 온도",
+    "unit": "℃",
+    "group": "보조 센서",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "119.267 ~ 120.467",
+    "sample_observation": "119.667 ~ 120.467"
+  },
+  {
+    "name": "AUX64_REC-1",
+    "description": "Reactor(Reactor Tube)부분의 Heating 온도",
+    "unit": "℃",
+    "group": "보조 센서",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "119 ~ 121.067",
+    "sample_observation": "119.267 ~ 120.800"
+  },
+  {
+    "name": "AUX65_REC-2-1",
+    "description": "Reactor(Reactor Tube)부분의 Heating 온도",
+    "unit": "℃",
+    "group": "보조 센서",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "118.467 ~ 121.4",
+    "sample_observation": "118.467 ~ 121.400"
+  },
+  {
+    "name": "AUX66_REC-2-2",
+    "description": "Reactor(Reactor Tube)부분의 Heating 온도",
+    "unit": "℃",
+    "group": "보조 센서",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "119.8 ~ 120.2",
+    "sample_observation": "119.800 ~ 120.200"
+  },
+  {
+    "name": "AUX67_IGS_N2-1",
+    "description": "IGS(Integrated Gas System)은 Gas Box를 의미하며, N2-1 Gas Line의 Heating 온도",
+    "unit": "℃",
+    "group": "보조 센서",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "39.8 ~ 40.2",
+    "sample_observation": "39.800 ~ 40.200"
+  },
+  {
+    "name": "AUX69_SEALCAP",
+    "description": "열 이름은 SEALCAP인데 Excel 설명은 R Axis/Magnetic Seal Body 온도로 적혀 있음. 위치 확인 필요.",
+    "unit": "℃",
+    "group": "보조 센서",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "146.067 ~ 151.267",
+    "sample_observation": "147.267 ~ 152.200"
+  },
+  {
+    "name": "AUX72_RAXIS",
+    "description": "R Axis는 Rotation 축의 온도로써 Magnetic Seal의 Body의 온도를 측정",
+    "unit": "℃",
+    "group": "보조 센서",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "51.867 ~ 57.267",
+    "sample_observation": "51.800 ~ 80.400"
+  },
+  {
+    "name": "AUX73_APC_RING",
+    "description": "APC(Auto Pressure Controller)의 내부 Heating 온도",
+    "unit": "℃",
+    "group": "보조 센서",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "187.667 ~ 191.067",
+    "sample_observation": "187.600 ~ 191.467"
+  },
+  {
+    "name": "AUX74_APC_OUT",
+    "description": "APC(Auto Pressure Controller)의 외부 Heating 온도",
+    "unit": "℃",
+    "group": "보조 센서",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "189 ~ 192.4",
+    "sample_observation": "189.000 ~ 192.200"
+  },
+  {
+    "name": "AUX89_JH1",
+    "description": "Excel은 APC 외부 Heating 온도로 공통 설명. JH 번호별 실제 위치는 자료만으로 미확인.",
+    "unit": "℃",
+    "group": "보조 센서",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "149.8 ~ 150.2",
+    "sample_observation": "149.800 ~ 150.200"
+  },
+  {
+    "name": "AUX90_JH2",
+    "description": "Excel은 APC 외부 Heating 온도로 공통 설명. JH 번호별 실제 위치는 자료만으로 미확인.",
+    "unit": "℃",
+    "group": "보조 센서",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "149.6 ~ 150.267",
+    "sample_observation": "149.600 ~ 150.400"
+  },
+  {
+    "name": "AUX91_JH3",
+    "description": "Excel은 APC 외부 Heating 온도로 공통 설명. JH 번호별 실제 위치는 자료만으로 미확인.",
+    "unit": "℃",
+    "group": "보조 센서",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "149.8 ~ 150.467",
+    "sample_observation": "149.667 ~ 150.200"
+  },
+  {
+    "name": "AUX92_JH4",
+    "description": "Excel은 APC 외부 Heating 온도로 공통 설명. JH 번호별 실제 위치는 자료만으로 미확인.",
+    "unit": "℃",
+    "group": "보조 센서",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "149.8 ~ 150.2",
+    "sample_observation": "149.667 ~ 150.200"
+  },
+  {
+    "name": "AUX93_JH5",
+    "description": "Excel은 APC 외부 Heating 온도로 공통 설명. JH 번호별 실제 위치는 자료만으로 미확인.",
+    "unit": "℃",
+    "group": "보조 센서",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "149.667 ~ 150.267",
+    "sample_observation": "149.800 ~ 150.200"
+  },
+  {
+    "name": "AUX94_JH6",
+    "description": "Excel은 APC 외부 Heating 온도로 공통 설명. JH 번호별 실제 위치는 자료만으로 미확인.",
+    "unit": "℃",
+    "group": "보조 센서",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "149.667 ~ 150.267",
+    "sample_observation": "149.000 ~ 150.667"
+  },
+  {
+    "name": "AUX95_JH7",
+    "description": "Excel은 APC 외부 Heating 온도로 공통 설명. JH 번호별 실제 위치는 자료만으로 미확인.",
+    "unit": "℃",
+    "group": "보조 센서",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "149.667 ~ 150.4",
+    "sample_observation": "149.667 ~ 150.400"
+  },
+  {
+    "name": "AUX96_JH8",
+    "description": "Excel은 APC 외부 Heating 온도로 공통 설명. JH 번호별 실제 위치는 자료만으로 미확인.",
+    "unit": "℃",
+    "group": "보조 센서",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "149.6 ~ 150.267",
+    "sample_observation": "149.200 ~ 150.867"
+  },
+  {
+    "name": "AUX97_JH9",
+    "description": "Excel은 APC 외부 Heating 온도로 공통 설명. JH 번호별 실제 위치는 자료만으로 미확인.",
+    "unit": "℃",
+    "group": "보조 센서",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "149.8 ~ 150.267",
+    "sample_observation": "149.667 ~ 150.267"
+  },
+  {
+    "name": "AUX98_JH10",
+    "description": "Excel은 APC 외부 Heating 온도로 공통 설명. JH 번호별 실제 위치는 자료만으로 미확인.",
+    "unit": "℃",
+    "group": "보조 센서",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "149.667 ~ 150.267",
+    "sample_observation": "149.667 ~ 150.200"
+  },
+  {
+    "name": "AUX99_JH11",
+    "description": "Excel은 APC 외부 Heating 온도로 공통 설명. JH 번호별 실제 위치는 자료만으로 미확인.",
+    "unit": "℃",
+    "group": "보조 센서",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "149.8 ~ 150.267",
+    "sample_observation": "149.667 ~ 150.267"
+  },
+  {
+    "name": "AUX100_JH12",
+    "description": "Excel은 APC 외부 Heating 온도로 공통 설명. JH 번호별 실제 위치는 자료만으로 미확인.",
+    "unit": "℃",
+    "group": "보조 센서",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "148.867 ~ 151",
+    "sample_observation": "148.867 ~ 151.067"
+  },
+  {
+    "name": "AUX101_JH13",
+    "description": "Excel은 APC 외부 Heating 온도로 공통 설명. JH 번호별 실제 위치는 자료만으로 미확인.",
+    "unit": "℃",
+    "group": "보조 센서",
+    "source": "docs/mt_nit_data_guide.md",
+    "representative_observation": "149.8 ~ 150.267",
+    "sample_observation": "149.667 ~ 150.267"
+  }
+]

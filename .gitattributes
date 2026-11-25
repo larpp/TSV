@@ -1,0 +1,6 @@
+* text=auto
+/vendor/timestral/** -text
+/config/*.json -text
+/config/weights/** -text
+*.py text eol=lf
+/vendor/timestral/**/*.py -text

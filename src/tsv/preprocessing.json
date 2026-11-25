@@ -1,0 +1,10 @@
+{
+  "manifest_sha256": "e3474cb608d4c1dc4c31247e540ee0e65bb9563cb6f5d090476f106068c1464b",
+  "digests": {
+    "profile": "bbf8773d472cbff32a038f32a31313f36c5a4ee681f8c1d2b21bfab7bf1a3dc2",
+    "artifact": "15a9cda8de924f7a60c10e3263506eeafa6cee46ec6cd69b227d627c7439e0cd",
+    "scaler": "c5446b2895d0382a9a11dc644c108549ad008bc14245e90a89de6d4d909ac065",
+    "data_config": "8dbc255ec16a9016bdfcf073495bfd62fee269ee537083cd05829c696f0937c9",
+    "bank": "5b95c3510c15412fdd280ba5bd30ec8eb2cdde88c22fafeb5fbbd710b7665c90"
+  }
+}
