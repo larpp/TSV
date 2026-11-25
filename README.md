@@ -8,17 +8,9 @@ TSV-28M은 과거 센서값과 장비가 기록한 Recipe, Main Step, Substep, S
 |---|---:|---:|---|---:|
 | TSV-28M (D-basic) | 128초 | 32초 | 연속 센서 98개, OPEN/CLOSE 센서 23개 | 28,132,674 |
 
-```mermaid
-flowchart LR
-    S["과거 센서값 · 설정값"] --> T["Timestral-28M"]
-    P["관측한 Recipe · Step · Loop"] --> E["공정 인코더"]
-    E -->|과거 공정 표현| T
-    S -->|센서 이력 요약| H["공정 Head"]
-    E --> H
-    H -->|다음 단계 · 남은 시간| R["Renderer"]
-    R -->|예상 공정 경로| T
-    T --> Y["향후 32초 센서 예측"]
-```
+![TSV-28M 모델 구조](docs/tsv-28m-architecture.png)
+
+*그림은 예측 구간 30초의 예시입니다. TSV-28M의 기본 예측 구간은 32초입니다.*
 
 ## 설치
 
